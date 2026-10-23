@@ -1,0 +1,120 @@
+/* THE LOST & FOUND BUREAU — STORY EDITION | HTML + CSS only */
+@property --c1{syntax:"<color>";inherits:true;initial-value:#070b1a}
+:root{color-scheme:dark;--ink:#f4efe6;--mut:#bdb8cf;--gold:#ffc857;--pink:#ff5d8f;--cyan:#5be7ff;--line:rgba(255,255,255,.16);
+  --head:"Syne","Arial Black",system-ui,sans-serif;--body:"DM Sans",system-ui,sans-serif;--hand:"Caveat","Segoe Script",cursive;
+  box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+*,*::before,*::after{box-sizing:inherit}
+html{scroll-behavior:smooth;background:#070b1a}
+body{margin:0;color:var(--ink);font:18px/1.6 var(--body);overflow-x:hidden;
+  background:radial-gradient(ellipse at 50% 0%,color-mix(in srgb,var(--c1) 70%,#fff 12%),transparent 60%),var(--c1)}
+body::after{content:"";position:fixed;inset:0;z-index:1;pointer-events:none;opacity:.7;
+  background:radial-gradient(circle,rgba(255,255,255,.6) 0 1px,transparent 1.6px) 0 0/150px 180px,radial-gradient(circle,rgba(255,255,255,.35) 0 1.5px,transparent 2px) 70px 90px/240px 260px;animation:dust 60s linear infinite}
+@keyframes dust{to{background-position:30px -1400px,-30px -1700px}}
+a{color:var(--cyan)}
+:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
+.skip{position:absolute;left:-999px;top:8px;z-index:99;padding:8px 12px;background:#000}.skip:focus{left:8px}
+.sr{position:absolute;opacity:0;width:1px;height:1px}
+.kicker{margin:0 0 6px;color:var(--gold);font-size:13px;font-weight:700;letter-spacing:.2em;text-transform:uppercase}
+h1,h2{font-family:var(--head);font-weight:800;line-height:1;margin:0}
+em{font-style:normal}
+
+/* top bar */
+.bar{position:fixed;top:0;left:0;right:0;height:4px;z-index:70;background:linear-gradient(90deg,var(--cyan),var(--pink),var(--gold));transform:scaleX(0);transform-origin:left}
+.top{position:fixed;top:calc(10px + env(safe-area-inset-top,0px));left:50%;translate:-50% 0;z-index:60;width:min(94vw,860px);display:flex;align-items:center;gap:14px;
+  padding:8px 16px;border:1px solid var(--line);border-radius:99px;background:rgba(10,13,30,.6);backdrop-filter:blur(14px)}
+.top__logo{font:800 15px var(--head);color:var(--ink);text-decoration:none;white-space:nowrap}.top__logo span{color:var(--gold)}
+.top ul{display:flex;gap:2px 14px;margin:0;padding:0;list-style:none;overflow-x:auto;scrollbar-width:none}
+.top nav{min-width:0;margin-left:auto}
+.top nav a{display:block;padding:5px 2px;color:var(--mut);font-size:12px;text-decoration:none;white-space:nowrap;transition:color .2s}
+.top nav a:hover{color:var(--gold)}
+
+/* cover */
+.cover{min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:110px 22px 60px;position:relative;z-index:2}
+.cover h1{max-width:900px;font-size:clamp(44px,10vw,112px);letter-spacing:-.04em;text-wrap:balance}
+.cover h1 em{background:linear-gradient(100deg,var(--gold),var(--pink),var(--cyan),var(--gold));background-size:300% 100%;-webkit-background-clip:text;background-clip:text;color:transparent;animation:shine 6s linear infinite}
+@keyframes shine{to{background-position:300% 0}}
+.cover__sub{max-width:520px;margin:22px 0 28px;color:var(--mut);font-size:20px}
+.cover__hint{margin-top:26px;color:var(--mut);font-size:14px}
+.btn{display:inline-block;padding:15px 30px;color:#10131f;background:var(--gold);border-radius:99px;font:800 15px var(--head);letter-spacing:.04em;text-decoration:none;
+  box-shadow:0 0 0 0 rgba(255,200,87,.6);transition:transform .2s,box-shadow .3s;animation:beat 2.4s infinite}
+.btn:hover{transform:scale(1.07) rotate(-1.5deg);box-shadow:0 0 40px rgba(255,200,87,.7)}
+@keyframes beat{50%{box-shadow:0 0 0 14px rgba(255,200,87,0)}}
+
+/* chapters: sticky scene + scrolling story */
+.chapter{position:relative;z-index:2;view-timeline:--ch}
+.stage{position:sticky;top:0;height:100vh;margin-bottom:-100vh;display:grid;place-items:center;overflow:hidden;pointer-events:none}
+.big{font-size:min(52vw,320px);line-height:1;filter:drop-shadow(0 0 70px var(--cc));opacity:.55}
+.big i{display:inline-block;font-style:normal}
+.orb{position:absolute;width:55vmax;height:55vmax;border-radius:50%;background:radial-gradient(circle,var(--cc),transparent 62%);opacity:.22;filter:blur(30px);animation:drift 14s ease-in-out infinite alternate}
+.o1{left:-20vmax;top:-12vmax}.o2{right:-22vmax;bottom:-16vmax;animation-delay:-6s;animation-direction:alternate-reverse}
+@keyframes drift{to{translate:8vmax 5vmax;scale:1.2}}
+.ring{animation:ring 1.1s ease-in-out infinite;transform-origin:50% 90%}
+@keyframes ring{0%,40%,100%{rotate:0deg}5%,15%,25%,35%{rotate:-14deg}10%,20%,30%{rotate:14deg}}
+.float{animation:float 5s ease-in-out infinite}
+@keyframes float{50%{translate:0 -22px;rotate:6deg}}
+.pulse{animation:pulse 2.4s ease-in-out infinite}
+@keyframes pulse{50%{scale:1.18;filter:brightness(1.5)}}
+.sus{position:absolute;font-size:clamp(46px,9vw,90px);opacity:.5;animation:float 4s ease-in-out infinite}
+.s1{left:12%;top:22%}.s2{right:12%;top:30%;animation-delay:-1.5s}.s3{left:22%;bottom:18%;animation-delay:-3s}
+.story{position:relative;max-width:640px;margin:0 auto;padding:58vh 22px 35vh}
+.story h2{font-size:clamp(38px,8vw,72px);letter-spacing:-.03em;margin-bottom:34px}
+.beat,.card,.quiz,.choice{margin:0 0 38vh;padding:20px 24px;background:rgba(7,10,26,.66);backdrop-filter:blur(10px);border:1px solid var(--line);border-radius:22px;font-size:clamp(19px,3vw,25px);line-height:1.45}
+.beat:nth-of-type(even){margin-left:auto;max-width:92%}
+.beat q{display:block;margin-top:8px;color:var(--cc);font-style:italic}
+.beat strong{color:var(--cc)}
+.cards,.card--big{margin-bottom:38vh}.cards .card,.card--big{margin-bottom:18px}
+.card{padding:0;font-size:18px;overflow:hidden}
+.card summary{padding:16px 20px;font:700 20px var(--head);cursor:pointer;list-style:none;transition:background .2s,padding .2s}
+.card summary::-webkit-details-marker{display:none}.card summary:hover{background:rgba(255,255,255,.09);padding-left:28px}
+.card summary::after{content:"tap to inspect";float:right;color:var(--mut);font:500 12px var(--body);letter-spacing:.1em;text-transform:uppercase;margin-top:6px}
+.card[open] summary::after{content:"open"}
+.card p{margin:0;padding:0 20px 18px;color:var(--mut)}
+.card[open]{animation:pop .4s ease-out;border-color:var(--cc)}
+@keyframes pop{from{scale:.94;opacity:.5}}
+
+/* branching choices (radio buttons, no JS) */
+.quiz,.choice{padding:22px}
+.picks{display:flex;flex-wrap:wrap;gap:10px}
+.picks label{flex:1 1 150px;padding:14px 16px;text-align:center;font:700 17px var(--head);border:2px solid var(--line);border-radius:16px;cursor:pointer;transition:transform .2s,border-color .2s,background .2s}
+.picks label:hover{transform:translateY(-4px) rotate(-1deg);border-color:var(--cc);background:rgba(255,255,255,.08)}
+.r{display:none;margin:18px 0 0;padding:16px 18px;background:rgba(255,255,255,.07);border-left:4px solid var(--cc);border-radius:10px;font-size:18px}
+.r em{display:block;margin-top:8px;color:var(--cc);font:600 24px/1.1 var(--hand)}
+#s1:checked~.picks label[for=s1],#s2:checked~.picks label[for=s2],#s3:checked~.picks label[for=s3],#e1:checked~.picks label[for=e1],#e2:checked~.picks label[for=e2]{background:var(--cc);color:#10131f;border-color:var(--cc)}
+#s1:focus-visible~.picks label[for=s1],#s2:focus-visible~.picks label[for=s2],#s3:focus-visible~.picks label[for=s3],#e1:focus-visible~.picks label[for=e1],#e2:focus-visible~.picks label[for=e2]{outline:3px solid var(--gold);outline-offset:3px}
+#s1:checked~.replies .r1,#s2:checked~.replies .r2,#s3:checked~.replies .r3,#e1:checked~.replies .o1,#e2:checked~.replies .o2{display:block;animation:pop .45s ease-out}
+.cf{display:block;font-size:34px;letter-spacing:.3em;animation:burst 1.8s ease-out both}
+@keyframes burst{from{translate:0 30px;scale:.3;opacity:0}40%{opacity:1}to{translate:0 -6px;scale:1}}
+
+/* finale */
+.finale{position:relative;z-index:2;max-width:680px;margin:0 auto;padding:30vh 22px 14vh;text-align:center}
+.finale h2{font-size:clamp(40px,9vw,84px);letter-spacing:-.03em;margin-bottom:18px}
+.finale h2 em{color:var(--gold);text-shadow:0 0 40px var(--gold)}
+.finale p{color:var(--mut)}
+.finale dl{display:grid;grid-template-columns:auto 1fr;gap:6px 18px;max-width:380px;margin:26px auto;padding:20px;text-align:left;border:1px dashed var(--gold);border-radius:18px;background:rgba(255,255,255,.05)}
+.finale dt{color:var(--gold);font-weight:700}.finale dd{margin:0}
+.foot{position:relative;z-index:2;padding:30px 20px calc(90px + env(safe-area-inset-bottom,0px));text-align:center;color:var(--mut);font-size:13px}.foot p{margin:6px}
+
+/* soundtrack */
+.sound{position:fixed;right:12px;bottom:calc(12px + env(safe-area-inset-bottom,0px));z-index:65;max-width:min(290px,86vw)}
+.sound details{background:rgba(10,13,30,.82);backdrop-filter:blur(12px);border:1px solid var(--line);border-radius:16px;overflow:hidden}
+.sound summary{display:flex;align-items:center;gap:10px;padding:10px 14px;color:var(--gold);font:700 12px var(--head);letter-spacing:.14em;text-transform:uppercase;cursor:pointer;list-style:none}
+.sound summary::-webkit-details-marker{display:none}
+.sound audio{display:block;width:calc(100% - 20px);margin:0 10px 10px}
+.record{width:22px;height:22px;border-radius:50%;background:radial-gradient(circle,var(--pink) 0 20%,#111 21%);box-shadow:0 0 0 1px var(--gold);animation:spin 8s linear infinite}
+.sound:has(audio:playing) .record{animation-duration:1.2s}
+@keyframes spin{to{rotate:360deg}}
+
+/* scroll-driven animations (Chrome, Edge, Safari 26+); everything stays visible elsewhere */
+@supports (animation-timeline:scroll()){
+  @keyframes mood{0%{--c1:#070b1a}28%{--c1:#120d33}55%{--c1:#3a1030}78%{--c1:#3d1f10}100%{--c1:#4a2a12}}
+  body{animation:mood linear both;animation-timeline:scroll(root)}
+  .bar{animation:grow linear both;animation-timeline:scroll(root)}
+  @keyframes grow{to{transform:scaleX(1)}}
+  @keyframes zoom{from{scale:.55;rotate:-12deg;opacity:0}45%{opacity:.6}to{scale:1.3;rotate:10deg;opacity:.15}}
+  .big{animation:zoom linear both;animation-timeline:--ch}
+  @keyframes in{from{opacity:0;translate:0 60px;filter:blur(10px)}to{opacity:1;translate:0 0;filter:none}}
+  .beat,.cards .card,.quiz,.choice,.card--big,.finale>*{animation:in linear both;animation-timeline:view();animation-range:entry 0% cover 28%}
+}
+@media (max-width:640px){body{font-size:16px}.top{padding:6px 12px;gap:8px}.top__logo span{display:none}.story{padding-top:50vh}.beat,.card summary::after{font-size:inherit}.card summary::after{display:none}.sound{right:8px;bottom:8px}}
+@media (prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}.big{opacity:.4}}
+@media print{.top,.sound,.bar,.stage,body::after{display:none!important}body{background:#fff;color:#000}.beat,.card,.r{background:none;border-color:#999;color:#000}.r{display:block}}

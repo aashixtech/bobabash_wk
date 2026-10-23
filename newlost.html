@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#070b1a">
+<meta name="description" content="An interactive detective story from the Lost & Found Bureau. Scroll to play.">
+<title>The Lost &amp; Found Bureau — The Night the Spark Vanished</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=DM+Sans:wght@400;500;700&family=Caveat:wght@600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="newstyle.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to the story</a>
+<div class="bar" aria-hidden="true"></div>
+
+<header class="top">
+  <a class="top__logo" href="#cover">LFB<span>·1927</span></a>
+  <nav aria-label="Story chapters"><ul>
+    <li><a href="#ch1">1 The Call</a></li><li><a href="#ch2">2 The Scene</a></li>
+    <li><a href="#ch3">3 The Suspects</a></li><li><a href="#ch4">4 The Twist</a></li><li><a href="#finale">Join</a></li>
+  </ul></nav>
+</header>
+
+<main id="main">
+  <section class="cover" id="cover">
+    <p class="kicker">An interactive case file · Est. 1927</p>
+    <h1>The Night the <em>Spark</em> Vanished</h1>
+    <p class="cover__sub">The Lost &amp; Found Bureau needs a new detective. Scroll to take the case. Your choices change the story.</p>
+    <a class="btn" href="#ch1">Take the case ↓</a>
+    <p class="cover__hint">🎧 Turn on the soundtrack (bottom right) for the full experience.</p>
+  </section>
+
+  <section class="chapter" id="ch1" aria-labelledby="t1" style="--cc:#5be7ff">
+    <div class="stage" aria-hidden="true"><i class="orb o1"></i><i class="orb o2"></i><span class="big"><i class="ring">☎️</i></span></div>
+    <div class="story">
+      <p class="kicker">Chapter 1 · 2:17 a.m.</p><h2 id="t1">The Call</h2>
+      <p class="beat">The Lost &amp; Found Bureau never sleeps. It just loses track of the alarm clock.</p>
+      <p class="beat">At 2:17 a.m., the phone rang. Nobody calls the Bureau at 2:17. Nobody calls the Bureau at all. That’s sort of the whole problem.</p>
+      <p class="beat">A shaky voice: <q>Detective… it’s gone. The <strong>Spark</strong>. The thing that makes every workshop work. Somebody took it.</q></p>
+      <p class="beat">You’re the new recruit. Your desk is already covered in someone else’s coffee. <strong>Grab your coat.</strong></p>
+    </div>
+  </section>
+
+  <section class="chapter" id="ch2" aria-labelledby="t2" style="--cc:#ffc857">
+    <div class="stage" aria-hidden="true"><i class="orb o1"></i><i class="orb o2"></i><span class="big"><i class="float">🔦</i></span></div>
+    <div class="story">
+      <p class="kicker">Chapter 2 · The scene</p><h2 id="t2">Three Clues</h2>
+      <p class="beat">The room is a mess. Papers everywhere. But three things don’t belong. Tap each one to inspect it.</p>
+      <div class="cards">
+        <details class="card"><summary>🧦 One lonely sock</summary><p>Still warm. Only one. Whoever was here left in a hurry, and in mismatched footwear.</p></details>
+        <details class="card"><summary>🔑 A key to nothing</summary><p>It fits no lock in the building. It does, however, fit your pocket suspiciously well.</p></details>
+        <details class="card"><summary>✏️ A chewed pen cap</summary><p>The pen is missing. So is every pen in the office. This is bigger than we thought.</p></details>
+      </div>
+      <p class="beat">Three clues. Three suspects. Time to ask questions.</p>
+    </div>
+  </section>
+
+  <section class="chapter" id="ch3" aria-labelledby="t3" style="--cc:#ff5d8f">
+    <div class="stage" aria-hidden="true"><i class="orb o1"></i><i class="orb o2"></i><span class="big"><i class="float">🕵️</i></span><span class="sus s1">😴</span><span class="sus s2">🌀</span><span class="sus s3">🖊️</span></div>
+    <div class="story">
+      <p class="kicker">Chapter 3 · Interrogation</p><h2 id="t3">Who Do You Question?</h2>
+      <p class="beat">Three suspects wait in the interview room. You only have time for one. <strong>Choose.</strong></p>
+      <div class="quiz">
+        <input class="sr" type="radio" name="sus" id="s1"><input class="sr" type="radio" name="sus" id="s2"><input class="sr" type="radio" name="sus" id="s3">
+        <div class="picks" role="group" aria-label="Choose a suspect">
+          <label for="s1">😴 Procrastination</label><label for="s2">🌀 The Dryer</label><label for="s3">🖊️ That One Colleague</label>
+        </div>
+        <div class="replies" aria-live="polite">
+          <p class="r r1"><b>Procrastination yawns:</b> “Spark? I’ll look for it. Tomorrow. Maybe the day after.” <em>Alibi: asleep. Verdict: suspiciously relaxed.</em></p>
+          <p class="r r2"><b>The Dryer rumbles:</b> “I only tumble. Things disappear in here all the time. Ask the socks.” <em>Alibi: spinning. Verdict: hiding a lot.</em></p>
+          <p class="r r3"><b>That One Colleague smiles:</b> “I was just borrowing it.” They’re holding six pens. <em>Alibi: none. Verdict: classic.</em></p>
+        </div>
+      </div>
+      <p class="beat">Everyone has an alibi. Everyone is lying a little. But something doesn’t add up…</p>
+    </div>
+  </section>
+
+  <section class="chapter" id="ch4" aria-labelledby="t4" style="--cc:#ffe27a">
+    <div class="stage" aria-hidden="true"><i class="orb o1"></i><i class="orb o2"></i><span class="big"><i class="pulse">✨</i></span></div>
+    <div class="story">
+      <p class="kicker">Chapter 4 · The twist</p><h2 id="t4">Check Your Pocket</h2>
+      <p class="beat">The key fits your pocket. The sock matches your left foot. The pen cap is… yours.</p>
+      <details class="card card--big"><summary>👖 Reach into your pocket</summary><p>You pull out something small and glowing. The <strong>Spark</strong>. It was never stolen. You put it down, years ago, and forgot where.</p></details>
+      <p class="beat">The case was never about a thief. It was about someone who stopped looking. <strong>What do you do?</strong></p>
+      <div class="choice">
+        <input class="sr" type="radio" name="end" id="e1"><input class="sr" type="radio" name="end" id="e2">
+        <div class="picks" role="group" aria-label="Choose your ending"><label for="e1">✨ Take the Spark back</label><label for="e2">🚪 Walk away</label></div>
+        <div class="replies" aria-live="polite">
+          <p class="r o1"><span class="cf" aria-hidden="true">🎉 ✨ 🎊 💫 🎉</span><b>Ending A.</b> The Spark flares in your hand. The lights come back on. Somewhere, a pen reappears. <em>You are officially a Bureau detective.</em></p>
+          <p class="r o2"><b>Ending B.</b> You leave it on the desk and step outside. The Spark flickers, patient. It knows where the next workshop is. <em>It will wait. It’s very good at waiting.</em></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="finale" id="finale" aria-labelledby="tf">
+    <p class="kicker">Case closed · Next case opens soon</p>
+    <h2 id="tf">Your Next Case Is <em>You</em></h2>
+    <p>Join the live Lost &amp; Found Bureau workshop. Find what you’ve been missing, with the rest of the detectives.</p>
+    <dl><dt>Date</dt><dd>[Add date]</dd><dt>Venue</dt><dd>[Add venue]</dd><dt>Bring</dt><dd>A notebook and one mystery</dd></dl>
+    <a class="btn" href="mailto:bureau@example.com?subject=Workshop%20Report">File your report</a>
+  </section>
+</main>
+
+<footer class="foot"><p>The Lost &amp; Found Bureau · Department of Unexplained Disappearances · Est. 1927</p><p><a href="#cover">Back to the start ↑</a></p></footer>
+
+<aside class="sound" aria-label="Soundtrack"><details open><summary><span class="record" aria-hidden="true"></span>Soundtrack</summary>
+<audio controls loop preload="auto" src=""D:\Boba\bureau-noir-loop.wav"">Your browser doesn’t support audio.</audio></details></aside>
+</body>
+</html>
